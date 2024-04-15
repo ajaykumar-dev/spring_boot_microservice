@@ -1,0 +1,52 @@
+#spring:
+#  application:
+#    name: getway-server
+#  cloud:
+#    gateway:
+#      mvc:
+#        routes:
+#        - id: PAYER-DAILY
+#          uri: lb://PAYER-DAILY
+#          predicates:
+#          - Path=/getPayerDailyReport/**
+#        - id: PAYMENT-PROCESS
+#          uri: lb://PAYMENT-PROCESS
+#          predicates:
+#            - Path=/getTransaction/**
+
+
+spring:
+  application:
+    name: getway-server
+  cloud:
+    gateway:
+      routes:
+        - id: PAYER-DAILY-DEV
+          uri: lb://PAYER-DAILY-DEV
+          predicates:
+            - Path=/getPayerDailyReport/**
+        - id: PAYMENT-PROCESS
+          uri: lb://PAYMENT-PROCESS
+          predicates:
+            - Path=/getTransaction/**, /getAllTransaction/**
+
+server:
+  port: 8448
+
+#eureka:
+#  instance:
+#    client:
+#      serverUrl:
+#        defaultZone: http://localhost:8761/eureka/
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serverUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+
