@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/ajaykumar-dev/spring_boot_microservice/tree/main/configs
+          uri: https://github.com/ajaykumar-dev/spring_boot_microservice
           clone-on-start: true
           skipSslValidation: true
 
