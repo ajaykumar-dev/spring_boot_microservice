@@ -11,3 +11,9 @@ payment-process.yml
 .idea/modules.xml
 .idea/spring_boot_microservice.iml
 .idea/vcs.xml
+application-dev.yml
+application-dev.yml
+application-prod.yml
+application.yml
+payment-process.yml
+payment-backup/service-discovery/target/classes/com/uniteller/servicediscovery/ServiceDiscoveryApplication.class
